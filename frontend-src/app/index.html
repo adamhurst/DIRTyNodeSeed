@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>Angular Seed Application</title>
+    <meta name="description" content="">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <!-- build:css app.min.css -->
+    <link rel="stylesheet" href="bower_components/bootstrap/dist/css/bootstrap.css">
+    <link rel="stylesheet" href="bower_components/bootstrap/dist/css/bootstrap-theme.css">
+    <link rel="stylesheet" href="css/app.css"/>
+    <!-- endbuild -->
+
+</head>
+<body ng-app="app">
+    <div class="container-fluid">
+        <div id="main-navigation" class="navbar navbar-default navbar-fixed-top container-fluid" role="navigation">
+           <ul class="nav navbar-nav navbar-right">
+                <li><a ui-sref="base">Home</a></li>
+            </ul>
+        </div>
+        <div ui-view id="main-content"></div>
+        <hr>
+        <footer>
+            <div class="container text-center">
+                <app-version></app-version>
+            </div>
+        </footer>
+    </div>
+
+    <!-- build:js app.min.js -->
+    <script src="bower_components/angular/angular.js"></script>
+    <script src="bower_components/angular-cookies/angular-cookies.js"></script>
+    <script src="bower_components/angular-resource/angular-resource.js"></script>
+    <script src="bower_components/angular-bootstrap/ui-bootstrap-tpls.js"></script>
+    <script src="bower_components/angular-ui-router/release/angular-ui-router.js"></script>
+    <script src="bower_components/angular-sanitize/angular-sanitize.js"></script>
+    <script src="bower_components/d3/d3.js"></script>
+
+    <!-- app scripts -->
+    <script src="services/commonServices.js"></script>
+    <script src="services/RESTapi.js"></script>
+    <script src="features/base.state.js"></script>
+    <script src="features/base.controller.js"></script>
+
+    <!-- app start -->
+    <script src="app.js"></script>
+    <!-- endbuild -->
+</body>
+</html>
