@@ -1,5 +1,11 @@
-module.exports = function (io) {
+module.exports = function (server) {
     'use strict';
+
+    var io = require('socket.io');
+
+    io = io.listen(server);
+    io.set('log level', 1000);
+
     io.on('connection', function (socket) {
         socket.broadcast.emit('user connected');
 

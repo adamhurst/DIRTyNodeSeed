@@ -14,16 +14,25 @@
 
 </head>
 <body ng-app="app">
-    <div class="container-fluid">
+    <div class="">
         <div id="main-navigation" class="navbar navbar-default navbar-fixed-top container-fluid" role="navigation">
            <ul class="nav navbar-nav navbar-right">
                 <li><a ui-sref="base">Home</a></li>
             </ul>
         </div>
-        <div ui-view id="main-content"></div>
+        <div class="row">
+            <br></br>
+            <br></br>
+        </div>
+        <div class="container">
+            <div class="row">
+                <div ui-view id="main-content"></div>
+            </div>
+        </div>
+
         <hr>
         <footer>
-            <div class="container text-center">
+            <div class="container-fluid text-center">
                 <app-version></app-version>
             </div>
         </footer>

@@ -1,0 +1,32 @@
+2014-11-11T17:21:06.480+0000 [initandlisten] MongoDB starting : pid=20328 port=27017 dbpath=C:/nodeJS/seedProject/src/db 32-bit host=GBWS0643
+2014-11-11T17:21:06.480+0000 [initandlisten] 
+2014-11-11T17:21:06.480+0000 [initandlisten] ** NOTE: This is a 32 bit MongoDB binary.
+2014-11-11T17:21:06.480+0000 [initandlisten] **       32 bit builds are limited to less than 2GB of data (or less with --journal).
+2014-11-11T17:21:06.480+0000 [initandlisten] **       Note that journaling defaults to off for 32 bit and is currently off.
+2014-11-11T17:21:06.480+0000 [initandlisten] **       See http://dochub.mongodb.org/core/32bit
+2014-11-11T17:21:06.480+0000 [initandlisten] 
+2014-11-11T17:21:06.480+0000 [initandlisten] ** NOTE: your operating system version does not support the method that MongoDB
+2014-11-11T17:21:06.480+0000 [initandlisten] **       uses to detect impending page faults.
+2014-11-11T17:21:06.480+0000 [initandlisten] **       This may result in slower performance for certain use cases
+2014-11-11T17:21:06.480+0000 [initandlisten] 
+2014-11-11T17:21:06.480+0000 [initandlisten] targetMinOS: Windows XP SP3
+2014-11-11T17:21:06.480+0000 [initandlisten] db version v2.6.5
+2014-11-11T17:21:06.480+0000 [initandlisten] git version: e99d4fcb4279c0279796f237aa92fe3b64560bf6
+2014-11-11T17:21:06.480+0000 [initandlisten] build info: windows sys.getwindowsversion(major=6, minor=1, build=7601, platform=2, service_pack='Service Pack 1') BOOST_LIB_VERSION=1_49
+2014-11-11T17:21:06.480+0000 [initandlisten] allocator: system
+2014-11-11T17:21:06.480+0000 [initandlisten] options: { storage: { dbPath: "C:/nodeJS/seedProject/src/db" }, systemLog: { destination: "file", path: "C:/nodeJS/seedProject/src/db/logs/mongodb.log" } }
+2014-11-11T17:21:07.902+0000 [initandlisten] command local.$cmd command: create { create: "startup_log", size: 10485760, capped: true } ntoreturn:1 keyUpdates:0 numYields:0  reslen:75 222ms
+2014-11-11T17:21:07.949+0000 [initandlisten] waiting for connections on port 27017
+2014-11-11T17:21:59.355+0000 CTRL_CLOSE_EVENT signal
+2014-11-11T17:21:59.355+0000 [consoleTerminate] got CTRL_CLOSE_EVENT, will terminate after current cmd ends
+2014-11-11T17:21:59.355+0000 [consoleTerminate] now exiting
+2014-11-11T17:21:59.386+0000 [consoleTerminate] dbexit: 
+2014-11-11T17:21:59.386+0000 [consoleTerminate] shutdown: going to close listening sockets...
+2014-11-11T17:21:59.386+0000 [consoleTerminate] closing listening socket: 1684
+2014-11-11T17:21:59.386+0000 [consoleTerminate] shutdown: going to flush diaglog...
+2014-11-11T17:21:59.386+0000 [consoleTerminate] shutdown: going to close sockets...
+2014-11-11T17:21:59.386+0000 [consoleTerminate] shutdown: waiting for fs preallocator...
+2014-11-11T17:21:59.386+0000 [consoleTerminate] shutdown: closing all files...
+2014-11-11T17:21:59.433+0000 [consoleTerminate] closeAllFiles() finished
+2014-11-11T17:21:59.433+0000 [consoleTerminate] shutdown: removing fs lock...
+2014-11-11T17:21:59.433+0000 [consoleTerminate] dbexit: really exiting now

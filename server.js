@@ -3,16 +3,18 @@
 
     // define globals
     var express = require('express'),
-        io = require('socket.io'),
         http = require('http'),
-        mongoose = require('mongoose'),
         path = require('path'),
         logger = require('morgan'),
         cookieParser = require('cookie-parser'),
         bodyParser = require('body-parser'),
         methodOverride = require('method-override'),
+        sys = require('sys'),
         app = express(),
         port = 8000;
+
+    // Initialise the MongoDB
+    var db = require('./db/mongo_init')(app);
 
     // middleware settings
     app.use(logger('dev'));
@@ -22,21 +24,19 @@
     app.use(methodOverride());
     app.use(require('stylus').middleware(path.join(__dirname, 'public')));
 
-    // Create server and set up our JSON API & socket server
     var server = http.createServer(app);
-    require('./routes/api')(app);
 
-    io = io.listen(server);
-    require('./sockets/base')(io);
-    io.set('log level', 1000);
+    // Set up our routes, REST API & socket server
+    require('./routes/index')(app);
+    require('./sockets/base')(server);
 
     // start the server
     server.listen(port, function(){
         console.log("Server started and listening on port "+port);
     });
 
-    //app.use("/", express.static(__dirname+'/frontend-src/app/'));
-    app.use("/", express.static(__dirname+'/public/'));
+
+    //app.use("/", express.static(__dirname+'/public/'));
 
     /*
      // for production

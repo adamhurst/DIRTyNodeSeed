@@ -1,8 +1,41 @@
-<div>
-    <h1>Home View</h1>
-    <h1>Home View</h1>
-    <h1>Home View</h1>
-    <h1>Home View</h1>
-    <h1>{{ test }}</h1>
+<div class="col-lg-1">
 
+    <table class="table table-hover ng-scope">
+        <thead>
+            <tr>
+                <th>Time</th>
+                <th>Post</th>
+                <th>&nbsp;</th>
+            </tr>
+        </thead>
+        <tbody>
+        <div >
+            <!-- ngRepeat: flow in activeFlowList | filter:filterOnlyAssigned -->
+            <tr class=" info  row-link" ng-repeat="data in test.data">
+                <td class="ng-binding">{{ data.id }}</td>
+                <td class="ng-binding">{{ data.name }}</td>
+                <td class="ng-binding">
+                    <span class="glyphicon glyphicon-remove" aria-hidden="true"></span>
+                </td>
+
+
+            </tr><!-- end ngRepeat: flow in activeFlowList | filter:filterOnlyAssigned -->
+        </div>
+        </tbody>
+    </table>
+
+    <br>
+
+
+
+
+</div>
+
+<div class="col-lg-6">
+    <div class="input-group input-group-lg">
+        <span class="input-group-btn">
+            <button ng-click="postMessage()" class="btn btn-default" type="button">Go!</button>
+        </span>
+        <input  ng-model="message" type="text" class="form-control" placeholder="Post Message">
+    </div>
 </div>

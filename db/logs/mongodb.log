@@ -1,0 +1,36 @@
+2014-11-11T17:22:07.824+0000 [initandlisten] MongoDB starting : pid=15768 port=27017 dbpath=./db 32-bit host=GBWS0643
+2014-11-11T17:22:07.824+0000 [initandlisten] 
+2014-11-11T17:22:07.824+0000 [initandlisten] ** NOTE: This is a 32 bit MongoDB binary.
+2014-11-11T17:22:07.824+0000 [initandlisten] **       32 bit builds are limited to less than 2GB of data (or less with --journal).
+2014-11-11T17:22:07.839+0000 [initandlisten] **       Note that journaling defaults to off for 32 bit and is currently off.
+2014-11-11T17:22:07.839+0000 [initandlisten] **       See http://dochub.mongodb.org/core/32bit
+2014-11-11T17:22:07.839+0000 [initandlisten] 
+2014-11-11T17:22:07.839+0000 [initandlisten] ** NOTE: your operating system version does not support the method that MongoDB
+2014-11-11T17:22:07.839+0000 [initandlisten] **       uses to detect impending page faults.
+2014-11-11T17:22:07.839+0000 [initandlisten] **       This may result in slower performance for certain use cases
+2014-11-11T17:22:07.839+0000 [initandlisten] 
+2014-11-11T17:22:07.839+0000 [initandlisten] targetMinOS: Windows XP SP3
+2014-11-11T17:22:07.839+0000 [initandlisten] db version v2.6.5
+2014-11-11T17:22:07.839+0000 [initandlisten] git version: e99d4fcb4279c0279796f237aa92fe3b64560bf6
+2014-11-11T17:22:07.839+0000 [initandlisten] build info: windows sys.getwindowsversion(major=6, minor=1, build=7601, platform=2, service_pack='Service Pack 1') BOOST_LIB_VERSION=1_49
+2014-11-11T17:22:07.839+0000 [initandlisten] allocator: system
+2014-11-11T17:22:07.839+0000 [initandlisten] options: { storage: { dbPath: "./db" }, systemLog: { destination: "file", path: "./db/logs/mongodb.log" } }
+2014-11-11T17:22:08.355+0000 [initandlisten] waiting for connections on port 27017
+2014-11-11T17:23:08.339+0000 [clientcursormon] mem (MB) res:48 virt:165
+2014-11-11T17:23:08.339+0000 [clientcursormon]  mapped:80
+2014-11-11T17:23:08.339+0000 [clientcursormon]  connections:0
+2014-11-11T17:23:08.355+0000 [PeriodicTaskRunner] task: DBConnectionPool-cleaner took: 9ms
+2014-11-11T17:23:08.371+0000 [PeriodicTaskRunner] task: WriteBackManager::cleaner took: 6ms
+2014-11-11T17:26:42.371+0000 CTRL_CLOSE_EVENT signal
+2014-11-11T17:26:42.371+0000 [consoleTerminate] got CTRL_CLOSE_EVENT, will terminate after current cmd ends
+2014-11-11T17:26:42.371+0000 [consoleTerminate] now exiting
+2014-11-11T17:26:42.480+0000 [consoleTerminate] dbexit: 
+2014-11-11T17:26:42.480+0000 [consoleTerminate] shutdown: going to close listening sockets...
+2014-11-11T17:26:42.496+0000 [consoleTerminate] closing listening socket: 1716
+2014-11-11T17:26:42.496+0000 [consoleTerminate] shutdown: going to flush diaglog...
+2014-11-11T17:26:42.496+0000 [consoleTerminate] shutdown: going to close sockets...
+2014-11-11T17:26:42.496+0000 [consoleTerminate] shutdown: waiting for fs preallocator...
+2014-11-11T17:26:42.496+0000 [consoleTerminate] shutdown: closing all files...
+2014-11-11T17:26:42.855+0000 [consoleTerminate] closeAllFiles() finished
+2014-11-11T17:26:42.855+0000 [consoleTerminate] shutdown: removing fs lock...
+2014-11-11T17:26:42.855+0000 [consoleTerminate] dbexit: really exiting now
