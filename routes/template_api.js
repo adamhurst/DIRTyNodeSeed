@@ -1,13 +1,16 @@
-module.exports = function(app) {
-    'use strict';
-    /* CRUD RESTful API to the MongoDB */
+'use strict';
 
-    var _posts = require('../models/testModel');
-    var baseURI = '/api/template';
+var mongoose = require('mongoose'),
+    _posts = mongoose.model('Test'),
+    baseURI = '/api/template';
+
+
+module.exports = function(app) {
+    /* CRUD RESTful API to the MongoDB */
 
     // Get a document by id
     app.get( baseURI+'/:id', function(req, res) {
-        _posts.collection
+        _posts
             .findOne({'date': req.query.id})
             .exec(function (err, document) {
                 if (err){
@@ -20,7 +23,7 @@ module.exports = function(app) {
 
     // Get all documents
     app.get(baseURI, function(req, res) {
-        _posts.collection.find(function (err, documents) {
+        _posts.find(function (err, documents) {
             if (err){
                 return console.error(err);
             } else {
@@ -31,25 +34,41 @@ module.exports = function(app) {
 
     // Create a document
     app.post( baseURI, function(req, res) {
-
-        console.log('################')
-        console.log(req.params)
-        console.log('################')
-        var newDoc = new _posts.collection({post: req.params.post});
+        var newDoc = new _posts({
+            post: req.body.post,
+            date:  new Date()
+        });
 
         newDoc.save(function(err, _newDoc){
             if (err){
                 return console.error(err);
             } else {
-                console.log("MongoDB write successful "+_newDoc);
+                _posts.find(function (_err, documents) {
+                    if(!_err) res.json({"data":documents});
+                });
             }
         });
     });
 
     // delete a document
-    app.delete( baseURI+'/:template_id', function(req, res) {
+    app.delete( baseURI, function(req, res) {
 
+        _posts.remove({'_id': req.query.id}, function(err) {
+            if(!err) {
+                _posts.find(function (_err, documents) {
+                    if (!_err) res.json({"data": documents});
+                });
+            }
+        });
     });
+        /*
+        _posts.collection.remove({_id: req.body.id}, function(){
+            _posts.collection.find(function (_err, documents) {
+                if(!_err) res.json({"data":documents});
+            });
+        })
+        */
+
 
     // Update a document
     app.put( baseURI+'/:template_id', function(req, res) {

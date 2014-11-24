@@ -8,7 +8,8 @@ angular.module('app.services.restapi',[])
                     'get'  : {method: "GET"},
                     'query': {method: 'GET', isArray: false},
                     'update': {method : "POST"},
-                    'save': {method: "POST"}
+                    'save': {method: "POST"},
+                    'delete': {method:'DELETE'}
                 }
             );
     });

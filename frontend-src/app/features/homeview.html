@@ -12,10 +12,10 @@
         <div >
             <!-- ngRepeat: flow in activeFlowList | filter:filterOnlyAssigned -->
             <tr class=" info  row-link" ng-repeat="data in test.data">
-                <td class="ng-binding">{{ data.id }}</td>
-                <td class="ng-binding">{{ data.name }}</td>
+                <td class="ng-binding">{{ data.date }}</td>
+                <td class="ng-binding">{{ data.post }}</td>
                 <td class="ng-binding">
-                    <span class="glyphicon glyphicon-remove" aria-hidden="true"></span>
+                    <span class="glyphicon glyphicon-remove" aria-hidden="true" ng-click="deleteData($index)"></span>
                 </td>
 
 

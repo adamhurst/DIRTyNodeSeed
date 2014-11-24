@@ -27,8 +27,9 @@ angular.module('app.base')
             });
         };
 
-        $scope.deleteData = function(d){
-            restService.delete({ id: $scope.id }, function() {
+        $scope.deleteData = function(i){
+
+            restService.delete({ id: $scope.test.data[i]._id }, function(result) {
                 $scope.test = result.toJSON();
             });
         };
@@ -39,9 +40,51 @@ angular.module('app.base')
             console.debug($scope.message);
 
             //$scope.message = "Sending...";
-            restService.save({}, {'post': $scope.message }, function() {
-                // $scope.test = result.toJSON();
+            restService.save({}, {'post': $scope.message }, function(result) {
+                $scope.test = result.toJSON();
                 $scope.message = "";
             });
         }
+
+        var socket = io.connect('http://localhost');
+        window.io = io;
+
+        //socket.on('connection', function(socket){
+            socket.on('chat message', function(msg){
+                console.log('message: ' + msg);
+            });
+        //});
+
+        var svg = d3.select("body")
+            .append("svg")
+            .attr("width",500)
+            .attr("height",500);
+
+        var circles = svg.selectAll('circle')
+            .data([])
+            .enter()
+            .append("circle")
+
+
+        $scope.d = [];
+        socket.on('newdata', function(d){
+            //console.debug(d);
+            $scope.d.splice(50);
+            $scope.d = [d].concat($scope.d);
+            //$scope.t = d;
+            //$scope.$apply()
+
+            d3.selectAll('circle').remove();
+
+            circles.data($scope.d)
+                .enter()
+                .append("circle")
+                .attr("cx", function(d){return 100*(1+d.x)})
+                .attr("cy", function(d){return 100*(1+d.y)})
+                .attr("r", function(d,i){return -(i)*(i-50)/100})
+                .attr("fill-opacity", 0.3)
+
+        })
+
+
     });

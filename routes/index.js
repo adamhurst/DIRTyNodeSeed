@@ -1,7 +1,8 @@
-module.exports = function(app) {
-    'use strict';
+'use strict';
 
-    var express = require('express');
+var express = require('express');
+
+module.exports = function(app) {
 
     app.use("/", express.static(__dirname+'/../frontend-src/app/'));
 
